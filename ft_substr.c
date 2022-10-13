@@ -1,34 +1,48 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_memcpy.c                                        :+:    :+:            */
+/*   ft_substr.c                                        :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: tde-brui <tde-brui@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/10/06 11:01:18 by tde-brui      #+#    #+#                 */
-/*   Updated: 2022/10/11 16:39:18 by tde-brui      ########   odam.nl         */
+/*   Created: 2022/10/11 14:06:07 by tde-brui      #+#    #+#                 */
+/*   Updated: 2022/10/11 17:10:25 by tde-brui      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include <stdio.h>
-#include <string.h>
+#include "libft.h"
 
-void	*ft_memcpy(void *dest, const void *src, size_t size)
+char	*ft_substr(char const *str, unsigned int start, size_t len)
 {
-	unsigned long	i;
-	char			*ptr;
-	char			*ptr1;
+	size_t				i;
+	size_t				j;
+	unsigned int		k;
+	char				*ptr;
 
 	i = 0;
-	ptr = (char *)src;
-	ptr1 = (char *)dest;
-	if (ptr == 0 && ptr1 == 0)
+	j = 0;
+	k = 0;
+	while (str[k])
+		k++;
+	ptr = malloc(len + 1);
+	if (ptr == 0)
 		return (0);
-	while (i < size)
+	if (start >= k)
+		return (ptr);
+	while (str[start + i] != '\0' && i < len)
 	{
-		ptr1[i] = ptr[i];
+		ptr[j] = str[start + i];
 		i++;
+		j++;
 	}
-	return (dest);
+	ptr[j] = '\0';
+	return (ptr);
 }
+
+// int main()
+// {
+// 	char arr[] = "Tijmen";
+// 	printf("%s", ft_substr(arr, 5, 2));
+// }

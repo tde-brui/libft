@@ -1,34 +1,46 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        ::::::::            */
+/*   ft_strlcpy.c                                       :+:    :+:            */
+/*                                                     +:+                    */
+/*   By: tde-brui <tde-brui@student.codam.nl>         +#+                     */
+/*                                                   +#+                      */
+/*   Created: 2022/10/06 11:01:35 by tde-brui      #+#    #+#                 */
+/*   Updated: 2022/10/08 12:56:56 by tde-brui      ########   odam.nl         */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <unistd.h>
+#include "libft.h"
 
 size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 {
-	unsigned long	i;
-	int				j;
+	size_t			i;
 
 	i = 0;
-	j = 0;
-	if (size > 0)
+	if (size < 0 || !dest)
+		return (0);
+	if (size == 0)
+		return (ft_strlen(src));
+	if (size > ft_strlen(src))
 	{
-		while (i < size - 1)
+		while (src[i])
 		{
 			dest[i] = src[i];
 			i++;
 		}
-	dest[i] = '\0';
 	}
-	while (src[j])
+	else
 	{
-		j++;
+		while (src[i] && i < size - 1)
+		{
+			dest[i] = src[i];
+			i++;
+		}
 	}
-	return (j);
-}
-
-int main()
-{
-	char arr1[] = "I am lorde yayaya";
-	char arr2[] = "Lorem epsum imus";
-	strlcpy(arr2, arr1, 5);
-	printf("%s", arr2);
+	dest[i] = '\0';
+	return (ft_strlen(src));
 }

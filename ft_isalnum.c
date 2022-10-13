@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        ::::::::            */
+/*   ft_isalnum.c                                       :+:    :+:            */
+/*                                                     +:+                    */
+/*   By: tde-brui <tde-brui@student.codam.nl>         +#+                     */
+/*                                                   +#+                      */
+/*   Created: 2022/10/06 11:00:48 by tde-brui      #+#    #+#                 */
+/*   Updated: 2022/10/06 15:21:31 by tde-brui      ########   odam.nl         */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <stdio.h>
 
-int	ft_isalpha(int a)
+static int	ft_isalpha(int a)
 {
 	if ((a < 91 && a > 64) || (a < 123 && a > 96))
 	{
@@ -12,7 +24,7 @@ int	ft_isalpha(int a)
 	}
 }
 
-int	ft_isdigit(int a)
+static int	ft_isdigit(int a)
 {
 	int	i;
 

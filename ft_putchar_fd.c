@@ -1,26 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_isdigit.c                                       :+:    :+:            */
+/*   ft_putchar_fd.c                                    :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: tde-brui <tde-brui@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/10/06 11:01:10 by tde-brui      #+#    #+#                 */
-/*   Updated: 2022/10/06 11:02:54 by tde-brui      ########   odam.nl         */
+/*   Created: 2022/10/12 12:56:38 by tde-brui      #+#    #+#                 */
+/*   Updated: 2022/10/12 13:03:25 by tde-brui      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isdigit(int a)
-{
-	int	i;
+#include <unistd.h>
 
-	i = 0;
-	if (a > 47 && a < 58)
-	{
-		return (1);
-	}
-	else
-	{
-		return (0);
-	}
+void	ft_putchar_fd(char c, int fd)
+{
+	write(fd, &c, 1);
 }

@@ -1,26 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_isdigit.c                                       :+:    :+:            */
+/*   ft_itoa.c                                          :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: tde-brui <tde-brui@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/10/06 11:01:10 by tde-brui      #+#    #+#                 */
-/*   Updated: 2022/10/06 11:02:54 by tde-brui      ########   odam.nl         */
+/*   Created: 2022/10/12 18:52:07 by tde-brui      #+#    #+#                 */
+/*   Updated: 2022/10/12 19:05:31 by tde-brui      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isdigit(int a)
+char	*ft_itoa(int n)
 {
-	int	i;
+	char	*ptr;
 
-	i = 0;
-	if (a > 47 && a < 58)
+	ptr = malloc();
+	if (n == 0)
 	{
-		return (1);
+		n = n + 48;
 	}
-	else
+	if (n < 0)
 	{
-		return (0);
+		n *= -1;
+	}
+	if (n > 0)
+	{
+		
 	}
 }

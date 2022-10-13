@@ -1,26 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_isdigit.c                                       :+:    :+:            */
+/*   ft_memchr.c                                        :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: tde-brui <tde-brui@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/10/06 11:01:10 by tde-brui      #+#    #+#                 */
-/*   Updated: 2022/10/06 11:02:54 by tde-brui      ########   odam.nl         */
+/*   Created: 2022/10/06 15:01:21 by tde-brui      #+#    #+#                 */
+/*   Updated: 2022/10/07 13:51:13 by tde-brui      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isdigit(int a)
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+
+void	*ft_memchr(const void *ptr, int value, size_t size)
 {
-	int	i;
+	unsigned long	i;
+	char			*ptr1;
 
 	i = 0;
-	if (a > 47 && a < 58)
+	ptr1 = (char *)ptr;
+	while (i < size)
 	{
-		return (1);
+		if (ptr1[i] == value)
+		{
+			return (&ptr1[i]);
+		}
+		i++;
 	}
-	else
-	{
-		return (0);
-	}
+	return (0);
 }

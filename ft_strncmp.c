@@ -1,26 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_isdigit.c                                       :+:    :+:            */
+/*   ft_strncmp.c                                       :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: tde-brui <tde-brui@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/10/06 11:01:10 by tde-brui      #+#    #+#                 */
-/*   Updated: 2022/10/06 11:02:54 by tde-brui      ########   odam.nl         */
+/*   Created: 2022/10/06 11:07:30 by tde-brui      #+#    #+#                 */
+/*   Updated: 2022/10/11 15:55:05 by tde-brui      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isdigit(int a)
+#include <stdlib.h>
+#include <stdio.h>
+#include <string.h>
+
+int	ft_strncmp(const char *str1, const char *str2, size_t size)
 {
-	int	i;
+	unsigned long	i;
+	unsigned char	*ptr;
+	unsigned char	*ptr1;
 
 	i = 0;
-	if (a > 47 && a < 58)
+	ptr = (unsigned char *)str1;
+	ptr1 = (unsigned char *)str2;
+	while (i < size)
 	{
-		return (1);
+		if (ptr[i] != ptr1[i] || ptr[i] == '\0' || ptr1[i] == '\0')
+		{
+			return (ptr[i] - ptr1[i]);
+		}
+		i++;
 	}
-	else
-	{
-		return (0);
-	}
+	return (0);
 }
