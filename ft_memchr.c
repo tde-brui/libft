@@ -6,7 +6,7 @@
 /*   By: tde-brui <tde-brui@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/06 15:01:21 by tde-brui      #+#    #+#                 */
-/*   Updated: 2022/10/07 13:51:13 by tde-brui      ########   odam.nl         */
+/*   Updated: 2022/10/13 19:42:52 by tde-brui      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	*ft_memchr(const void *ptr, int value, size_t size)
 	ptr1 = (char *)ptr;
 	while (i < size)
 	{
-		if (ptr1[i] == value)
+		if (ptr1[i] == (char)value)
 		{
 			return (&ptr1[i]);
 		}

@@ -6,7 +6,7 @@
 /*   By: tde-brui <tde-brui@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/11 16:04:53 by tde-brui      #+#    #+#                 */
-/*   Updated: 2022/10/11 16:40:13 by tde-brui      ########   odam.nl         */
+/*   Updated: 2022/10/18 15:08:51 by tde-brui      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,14 +19,14 @@ char	*ft_strjoin(char const *str1, char const *str2)
 	char	*ptr;
 	int		i;
 	int		j;
+	int		k;
 
 	i = 0;
 	j = 0;
-	ptr = malloc(ft_strlen((str1) + ft_strlen(str2)) + 1);
+	k = ft_strlen(str1) + ft_strlen(str2) + 1;
+	ptr = malloc((sizeof(char) * k));
 	if (ptr == 0)
 		return (ptr);
-	if (str1 == 0)
-		return (0);
 	while (str1[i])
 	{
 		ptr[i] = str1[i];
@@ -34,17 +34,16 @@ char	*ft_strjoin(char const *str1, char const *str2)
 	}
 	while (str2[j])
 	{
-		ptr[i] = str2[j];
-		i++;
+		ptr[i + j] = str2[j];
 		j++;
 	}
-	ptr[i] = '\0';
+	ptr[i + j] = '\0';
 	return (ptr);
 }
 
 // int main()
 // {
-// 	char arr1[] = "tijmen";
-// 	char arr2[] = " = legend";
+// 	char arr1[] = "";
+// 	char arr2[] = "dolor sit amet";
 // 	printf("%s", ft_strjoin(arr1, arr2));
 // }

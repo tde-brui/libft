@@ -6,7 +6,7 @@
 /*   By: tde-brui <tde-brui@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/06 11:01:42 by tde-brui      #+#    #+#                 */
-/*   Updated: 2022/10/08 13:04:38 by tde-brui      ########   odam.nl         */
+/*   Updated: 2022/10/13 19:43:11 by tde-brui      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ char	*ft_strrchr(const char *str, int a)
 	}
 	while (i > -1)
 	{
-		if (str[i] == a)
+		if (str[i] == (char)a)
 		{
 			return (&ptr[i]);
 		}

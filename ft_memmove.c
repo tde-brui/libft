@@ -6,43 +6,47 @@
 /*   By: tde-brui <tde-brui@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/06 11:01:22 by tde-brui      #+#    #+#                 */
-/*   Updated: 2022/10/12 12:52:10 by tde-brui      ########   odam.nl         */
+/*   Updated: 2022/10/15 17:54:55 by tde-brui      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include <unistd.h>
+#include <stdio.h>
 #include <string.h>
 #include "libft.h"
 
 void	*ft_memmove(void *dest, const void *src, size_t num)
 {
-	unsigned long	i;
+	unsigned long	j;
 	char			*ptrsrc;
 	char			*ptrdest;
 
-	i = 0;
+	j = num;
 	ptrsrc = (char *)src;
 	ptrdest = (char *)dest;
-	if (ptrdest == 0 && ptrsrc == 0 && num == 0)
+	if (src == 0 && dest == 0)
 		return (0);
-	if (num < 1)
+	if (dest > src)
 	{
-		return (dest);
+		while (j-- > 0)
+			ptrdest[j] = ptrsrc[j];
 	}
-	while (i < num)
+	else
 	{
-			ptrdest[i] = ptrsrc[i];
-			i++;
+		j = 0;
+		while (j < num)
+		{
+			ptrdest[j] = ptrsrc[j];
+			j++;
+		}
 	}
 	return (dest);
 }
 
 // int main()
 // {
-// 	char src[] = "";
-// 	char dest[] = "lmao";
-// 	if (dest != memmove(dest, src, 8))
-//     	write(1, "dest's adress was not returned\n", 31);
-//     write(1, dest, 22);
+// 	char arr1[] = "";
+// 	char arr2[] = "";
+// 	printf("%s", ft_memmove(arr1, arr2, 2));
 // }

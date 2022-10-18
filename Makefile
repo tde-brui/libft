@@ -32,18 +32,19 @@ SOURCE	= \
 	ft_putchar_fd.c \
 	ft_putstr_fd.c \
 	ft_putendl_fd.c \
-	ft_putnbr_fd.c
+	ft_putnbr_fd.c \
+	ft_itoa.c \
+	ft_strmapi.c \
+	ft_striteri.c \
+	ft_split.c
 
 all: $(NAME)
-# @echo "executing..."
 
 $(NAME): $(OBJECT)
 	ar -cr $(NAME) $(OBJECT)
-# @echo "creating library..."
 
 $(OBJECT):
 	$(CC) $(CFLAGS) -c $(SOURCE)
-# @echo "compiling into object files..."
 
 clean: 
 	rm -f $(OBJECT)
@@ -51,7 +52,7 @@ clean:
 fclean: clean
 	rm -f $(NAME) 
 
-re: all fclean
+re: fclean all
 
 
 

@@ -6,7 +6,7 @@
 /*   By: tde-brui <tde-brui@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/06 11:01:32 by tde-brui      #+#    #+#                 */
-/*   Updated: 2022/10/11 17:56:31 by tde-brui      ########   odam.nl         */
+/*   Updated: 2022/10/13 19:31:52 by tde-brui      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,16 +17,36 @@
 
 size_t	ft_strlcat(char *dest, const char *src, size_t size)
 {
-	int				i;
+	unsigned long	i;
 	unsigned long	j;
+	unsigned long	k;
+	unsigned long	sum;
 
-	i = 0;
-	j = 0;
-	while (src[i] && j < (size - ft_strlen(dest) - 1))
+	i = ft_strlen(dest);
+	j = ft_strlen(src);
+	sum = i + j;
+	k = 0;
+	if (i >= size)
+		return (j + size);
+	while (i < size - 1 && src[k])
 	{
-		dest[i + ft_strlen(dest)] = src[i];
+		dest[i] = src[k];
+		k++;
 		i++;
-		j++;
 	}
-	return (i + ft_strlen(dest));
+	if (i < size)
+	{
+		dest[i] = '\0';
+	}
+	return (sum);
 }
+
+// int main()
+// {
+// 	char	*s1 = "123";
+// 	char	*s2 = "5";
+// 	int		i = 3;
+
+// 	//printf("%lu", ft_strlcat(s1, s2, i));
+// 	printf("%lu", ft_strlcat(s1, s2, i));
+// }

@@ -6,7 +6,7 @@
 /*   By: tde-brui <tde-brui@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/11 14:06:07 by tde-brui      #+#    #+#                 */
-/*   Updated: 2022/10/11 17:10:25 by tde-brui      ########   odam.nl         */
+/*   Updated: 2022/10/18 16:06:50 by tde-brui      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,20 +18,16 @@ char	*ft_substr(char const *str, unsigned int start, size_t len)
 {
 	size_t				i;
 	size_t				j;
-	unsigned int		k;
 	char				*ptr;
 
 	i = 0;
 	j = 0;
-	k = 0;
-	while (str[k])
-		k++;
-	ptr = malloc(len + 1);
+	if (len > ft_strlen(str))
+		len = ft_strlen(str);
+	ptr = malloc(((sizeof(char)) * len) + 1);
 	if (ptr == 0)
 		return (0);
-	if (start >= k)
-		return (ptr);
-	while (str[start + i] != '\0' && i < len)
+	while (str[start + i] != '\0' && i < len && start <= ft_strlen(str))
 	{
 		ptr[j] = str[start + i];
 		i++;
@@ -43,6 +39,6 @@ char	*ft_substr(char const *str, unsigned int start, size_t len)
 
 // int main()
 // {
-// 	char arr[] = "Tijmen";
-// 	printf("%s", ft_substr(arr, 5, 2));
+// 	//char arr[] = "Tijmen";
+// 	printf("%s", ft_substr("", 1, 1));
 // }

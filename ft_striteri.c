@@ -1,43 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_strdup.c                                        :+:    :+:            */
+/*   ft_striteri.c                                      :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: tde-brui <tde-brui@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/10/11 13:29:43 by tde-brui      #+#    #+#                 */
-/*   Updated: 2022/10/14 12:56:21 by tde-brui      ########   odam.nl         */
+/*   Created: 2022/10/13 15:32:07 by tde-brui      #+#    #+#                 */
+/*   Updated: 2022/10/13 15:36:36 by tde-brui      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include <stdio.h>
-#include <string.h>
 #include "libft.h"
 
-char	*ft_strdup(const char *str)
+void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
-	char	*ptr;
-	int		i;
+	unsigned int	i;
+	unsigned int	j;
 
 	i = 0;
-	while (str[i])
-		i++;
-	ptr = malloc(i + 1);
-	if (ptr == 0)
-		return (ptr);
-	i = 0;
-	while (str[i])
+	j = ft_strlen(s);
+	while (s[i])
 	{
-		ptr[i] = str[i];
+		f(i, &s[i]);
 		i++;
 	}
-	ptr[i] = '\0';
-	return (ptr);
 }
-
-// int main()
-// {
-// 	char arr[] = "";
-// 	printf("%s", strdup(arr));
-// }
