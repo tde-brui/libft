@@ -6,9 +6,11 @@
 /*   By: tde-brui <tde-brui@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/06 11:01:42 by tde-brui      #+#    #+#                 */
-/*   Updated: 2022/10/13 19:43:11 by tde-brui      ########   odam.nl         */
+/*   Updated: 2022/10/21 15:14:59 by tde-brui      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 char	*ft_strrchr(const char *str, int a)
 {
@@ -29,5 +31,5 @@ char	*ft_strrchr(const char *str, int a)
 		}
 		i--;
 	}
-	return (0);
+	return (NULL);
 }

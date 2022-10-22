@@ -6,13 +6,11 @@
 /*   By: tde-brui <tde-brui@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/06 15:01:21 by tde-brui      #+#    #+#                 */
-/*   Updated: 2022/10/13 19:42:52 by tde-brui      ########   odam.nl         */
+/*   Updated: 2022/10/21 15:13:46 by tde-brui      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <string.h>
-#include <stdlib.h>
+#include "libft.h"
 
 void	*ft_memchr(const void *ptr, int value, size_t size)
 {
@@ -29,5 +27,5 @@ void	*ft_memchr(const void *ptr, int value, size_t size)
 		}
 		i++;
 	}
-	return (0);
+	return (NULL);
 }

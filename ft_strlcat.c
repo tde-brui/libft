@@ -6,13 +6,10 @@
 /*   By: tde-brui <tde-brui@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/06 11:01:32 by tde-brui      #+#    #+#                 */
-/*   Updated: 2022/10/13 19:31:52 by tde-brui      ########   odam.nl         */
+/*   Updated: 2022/10/21 15:16:30 by tde-brui      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include <stdio.h>
-#include <string.h>
 #include "libft.h"
 
 size_t	ft_strlcat(char *dest, const char *src, size_t size)
@@ -40,13 +37,3 @@ size_t	ft_strlcat(char *dest, const char *src, size_t size)
 	}
 	return (sum);
 }
-
-// int main()
-// {
-// 	char	*s1 = "123";
-// 	char	*s2 = "5";
-// 	int		i = 3;
-
-// 	//printf("%lu", ft_strlcat(s1, s2, i));
-// 	printf("%lu", ft_strlcat(s1, s2, i));
-// }

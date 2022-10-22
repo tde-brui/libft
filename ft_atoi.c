@@ -6,12 +6,11 @@
 /*   By: tde-brui <tde-brui@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/07 12:47:16 by tde-brui      #+#    #+#                 */
-/*   Updated: 2022/10/09 14:39:51 by tde-brui      ########   odam.nl         */
+/*   Updated: 2022/10/21 15:13:18 by tde-brui      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <stdlib.h>
+#include "libft.h"
 
 int	ft_atoi(const char *str)
 {
@@ -39,8 +38,3 @@ int	ft_atoi(const char *str)
 		result *= -1;
 	return (result);
 }
-
-// int main()
-// {
-// 	printf("%d", ft_atoi("+1"));
-// }

@@ -6,12 +6,10 @@
 /*   By: tde-brui <tde-brui@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/12 13:13:12 by tde-brui      #+#    #+#                 */
-/*   Updated: 2022/10/12 14:07:07 by tde-brui      ########   odam.nl         */
+/*   Updated: 2022/10/21 15:16:57 by tde-brui      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-#include <stdlib.h>
 #include "libft.h"
 
 void	ft_putnbr_fd(int n, int fd)
@@ -34,8 +32,3 @@ void	ft_putnbr_fd(int n, int fd)
 		ft_putchar_fd(n, fd);
 	}
 }
-
-// int main()
-// {
-// 	ft_putnbr_fd(2000, 1);
-// }

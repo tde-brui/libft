@@ -6,13 +6,11 @@
 /*   By: tde-brui <tde-brui@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/06 11:01:24 by tde-brui      #+#    #+#                 */
-/*   Updated: 2022/10/06 11:03:33 by tde-brui      ########   odam.nl         */
+/*   Updated: 2022/10/21 17:33:28 by tde-brui      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <stddef.h>
-#include <string.h>
+#include "libft.h"
 
 void	*ft_memset(void *str, int val, size_t size)
 {

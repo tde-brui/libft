@@ -6,13 +6,15 @@
 /*   By: tde-brui <tde-brui@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/06 15:43:31 by tde-brui      #+#    #+#                 */
-/*   Updated: 2022/10/14 17:18:55 by tde-brui      ########   odam.nl         */
+/*   Updated: 2022/10/21 15:15:36 by tde-brui      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
+
 # include <stdlib.h>
+# include <unistd.h>
 
 void		ft_bzero(void *str, size_t size);
 void		*ft_calloc(size_t num, size_t size);

@@ -6,13 +6,11 @@
 /*   By: tde-brui <tde-brui@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/06 11:07:30 by tde-brui      #+#    #+#                 */
-/*   Updated: 2022/10/11 15:55:05 by tde-brui      ########   odam.nl         */
+/*   Updated: 2022/10/21 15:14:51 by tde-brui      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include <stdio.h>
-#include <string.h>
+#include "libft.h"
 
 int	ft_strncmp(const char *str1, const char *str2, size_t size)
 {

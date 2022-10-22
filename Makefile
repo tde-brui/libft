@@ -1,8 +1,8 @@
 CC = gcc
 NAME = libft.a
 CFLAGS = -Wall -Wextra -Werror
-OBJECT = *.o
 SOURCE	= \
+	ft_atoi.c \
 	ft_bzero.c \
 	ft_calloc.c \
 	ft_isalnum.c \
@@ -24,7 +24,6 @@ SOURCE	= \
 	ft_substr.c \
 	ft_tolower.c \
 	ft_toupper.c \
-	ft_atoi.c \
 	ft_memchr.c \
 	ft_memcmp.c \
 	ft_strjoin.c \
@@ -38,21 +37,20 @@ SOURCE	= \
 	ft_striteri.c \
 	ft_split.c
 
+OBJECT = $(SOURCE:.c=.o)
+
 all: $(NAME)
 
 $(NAME): $(OBJECT)
 	ar -cr $(NAME) $(OBJECT)
 
-$(OBJECT):
-	$(CC) $(CFLAGS) -c $(SOURCE)
+%.o: %.c
+	$(CC) $(CFLAGS) -c $< -o $@
 
 clean: 
 	rm -f $(OBJECT)
 
 fclean: clean
-	rm -f $(NAME) 
+	rm -f $(NAME)
 
 re: fclean all
-
-
-

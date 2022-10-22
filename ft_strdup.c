@@ -6,13 +6,10 @@
 /*   By: tde-brui <tde-brui@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/11 13:29:43 by tde-brui      #+#    #+#                 */
-/*   Updated: 2022/10/14 12:56:21 by tde-brui      ########   odam.nl         */
+/*   Updated: 2022/10/21 15:16:42 by tde-brui      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include <stdio.h>
-#include <string.h>
 #include "libft.h"
 
 char	*ft_strdup(const char *str)
@@ -24,8 +21,8 @@ char	*ft_strdup(const char *str)
 	while (str[i])
 		i++;
 	ptr = malloc(i + 1);
-	if (ptr == 0)
-		return (ptr);
+	if (!ptr)
+		return (NULL);
 	i = 0;
 	while (str[i])
 	{
@@ -35,9 +32,3 @@ char	*ft_strdup(const char *str)
 	ptr[i] = '\0';
 	return (ptr);
 }
-
-// int main()
-// {
-// 	char arr[] = "";
-// 	printf("%s", strdup(arr));
-// }

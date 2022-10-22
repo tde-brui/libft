@@ -6,13 +6,10 @@
 /*   By: tde-brui <tde-brui@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/14 11:46:05 by tde-brui      #+#    #+#                 */
-/*   Updated: 2022/10/16 14:55:25 by tde-brui      ########   odam.nl         */
+/*   Updated: 2022/10/22 14:03:52 by tde-brui      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include <stdio.h>
-#include <string.h>
 #include "libft.h"
 
 static int	ft_stringsnum(char const *str1, char c)
@@ -24,6 +21,8 @@ static int	ft_stringsnum(char const *str1, char c)
 	i = 0;
 	j = ft_strlen(str1);
 	k = 0;
+	if (ft_strncmp(str1, "", 1) == 0)
+		return (0);
 	while (str1[i])
 	{
 		while ((str1[i] == c) && str1[i] != '\0')
@@ -32,17 +31,20 @@ static int	ft_stringsnum(char const *str1, char c)
 			i++;
 		k++;
 	}
-	if (str1[j - 1] == c)
-		k--;
+	if (str1[j - 1] == c && str1[j] == '\0')
+		k -= 1;
 	return (k);
 }
 
-static void	ft_free(char **ptr, int j)
+static void	ft_free(char **ptr)
 {
-	while (j > 0)
+	int	i;
+
+	i = 0;
+	while (ptr[i])
 	{
-		free(ptr[j]);
-		j--;
+		free(ptr[i]);
+		i++;
 	}
 	free(ptr);
 }
@@ -69,17 +71,17 @@ char	**ft_split(char const *str1, char c)
 	i = 0;
 	j = 0;
 	ptr = (char **)malloc((ft_stringsnum(str1, c) + 1) * sizeof(char *));
-	if (ptr == 0)
-		return (ptr);
+	if (!ptr)
+		return (NULL);
 	while (j < ft_stringsnum(str1, c))
 	{
 		while (str1[i] == c && str1[i] != '\0')
 			i++;
 		ptr[j] = ft_substr(str1, i, ft_len(str1, c, i));
-		if (ptr[j] == 0)
+		if (!ptr[j])
 		{
-			ft_free(ptr, j);
-			return (0);
+			ft_free(ptr);
+			return (NULL);
 		}
 		while (str1[i] != c && str1[i] != '\0')
 			i++;
@@ -88,16 +90,3 @@ char	**ft_split(char const *str1, char c)
 	ptr[j] = 0;
 	return (ptr);
 }
-
-// int main()
-// {
-// 	int i = 0;
-// 	char **array = ft_split("      split       this for   me  !       ", ' ');
-// 	// printf("%d", ft_len("ik ben Tijmen"))
-// 	while (array[i])
-// 	{
-// 		printf("%s\n", array[i]);
-// 		i++;
-// 	}
-// 	// printf("%d", ft_stringsnum("  split    this       FOR      ", ' '));
-// }

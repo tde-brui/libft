@@ -6,12 +6,11 @@
 /*   By: tde-brui <tde-brui@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/12 18:52:07 by tde-brui      #+#    #+#                 */
-/*   Updated: 2022/10/13 14:21:50 by tde-brui      ########   odam.nl         */
+/*   Updated: 2022/10/21 15:17:16 by tde-brui      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <stdlib.h>
+#include "libft.h"
 
 static int	ft_len(int n)
 {
@@ -77,8 +76,3 @@ char	*ft_itoa(int n)
 		ptr = ft_min_int(ptr);
 	return (ptr);
 }
-
-// int main()
-// {
-// 	printf("%s", ft_itoa(-2147483648));
-// }
