@@ -35,7 +35,8 @@ SOURCE	= \
 	ft_itoa.c \
 	ft_strmapi.c \
 	ft_striteri.c \
-	ft_split.c
+	ft_split.c	\
+	ft_putchar.c
 
 OBJECT = $(SOURCE:.c=.o)
 
