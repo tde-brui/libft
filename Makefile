@@ -35,8 +35,14 @@ SOURCE	= \
 	ft_itoa.c \
 	ft_strmapi.c \
 	ft_striteri.c \
-	ft_split.c	\
-	ft_putchar.c
+	ft_split.c \
+	ft_utils.c \
+	ft_upper_hexa.c \
+	ft_unsigned_dec.c \
+	ft_put_addr.c \
+	ft_printf.c \
+	ft_lower_hexa.c \
+	ft_get_int.c
 
 OBJECT = $(SOURCE:.c=.o)
 

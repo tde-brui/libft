@@ -12,27 +12,27 @@
 
 #include "libft.h"
 
-static int	ft_len(int n)
-{
-	int	i;
+// static int	ft_len(int n)
+// {
+// 	int	i;
 
-	i = 0;
-	if (n == 0)
-		return (1);
-	if (n == -2147483648)
-		return (11);
-	if (n < 0)
-	{
-		n = n * -1;
-		i++;
-	}
-	while (n > 0)
-	{
-		n = n / 10;
-		i++;
-	}
-	return (i);
-}
+// 	i = 0;
+// 	if (n == 0)
+// 		return (1);
+// 	if (n == -2147483648)
+// 		return (11);
+// 	if (n < 0)
+// 	{
+// 		n = n * -1;
+// 		i++;
+// 	}
+// 	while (n > 0)
+// 	{
+// 		n = n / 10;
+// 		i++;
+// 	}
+// 	return (i);
+// }
 
 static char	*ft_min_int(char *str)
 {

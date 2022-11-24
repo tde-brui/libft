@@ -62,10 +62,8 @@ char	*ft_strtrim(char const *str, char const *set)
 	int		start;
 	int		end;
 	char	*ptr;
-	int		i;
 	int		sum;
 
-	i = 0;
 	start = ft_start(str, set);
 	end = ft_end(str, set);
 	sum = ft_strlen(str) - start - end;

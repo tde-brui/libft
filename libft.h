@@ -6,7 +6,7 @@
 /*   By: tde-brui <tde-brui@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/06 15:43:31 by tde-brui      #+#    #+#                 */
-/*   Updated: 2022/10/23 17:20:06 by tde-brui      ########   odam.nl         */
+/*   Updated: 2022/10/21 15:15:36 by tde-brui      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,15 @@ char		*ft_itoa(int n);
 char		*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 void		ft_striteri(char *s, void (*f)(unsigned int, char*));
 char		**ft_split(char const *str1, char c);
+int			ft_unsigned_dec(unsigned int num);
+int			ft_len(int n);
+int			ft_get_int(int n);
+int			ft_putstr(char *str);
+int			ft_printf(const char *str, ...);
 int			ft_putchar(int c);
+int			ft_lower_hexa(unsigned int n);
+int			ft_upper_hexa(unsigned int n);
+int			ft_hexa_len(unsigned int n);
+int			ft_put_addr(void *ptr);
 
 #endif

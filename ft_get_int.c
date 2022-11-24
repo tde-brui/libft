@@ -1,25 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_striteri.c                                      :+:    :+:            */
+/*   ft_get_int.c                                       :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: tde-brui <tde-brui@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/10/13 15:32:07 by tde-brui      #+#    #+#                 */
-/*   Updated: 2022/10/21 17:56:18 by tde-brui      ########   odam.nl         */
+/*   Created: 2022/10/25 14:33:53 by tde-brui      #+#    #+#                 */
+/*   Updated: 2022/10/28 18:27:42 by tde-brui      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_striteri(char *s, void (*f)(unsigned int, char*))
+int	ft_get_int(int n)
 {
-	unsigned int	i;
+	char	*ptr;
 
-	i = 0;
-	while (s[i])
-	{
-		f(i, &s[i]);
-		i++;
-	}
+	ptr = ft_itoa(n);
+	ft_putstr(ptr);
+	free(ptr);
+	return (ft_len(n));
 }

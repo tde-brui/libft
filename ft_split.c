@@ -49,7 +49,7 @@ static void	ft_free(char **ptr)
 	free(ptr);
 }
 
-static size_t	ft_len(char const *str1, char c, int i)
+static size_t	split_len(char const *str1, char c, int i)
 {
 	int	k;
 
@@ -77,7 +77,7 @@ char	**ft_split(char const *str1, char c)
 	{
 		while (str1[i] == c && str1[i] != '\0')
 			i++;
-		ptr[j] = ft_substr(str1, i, ft_len(str1, c, i));
+		ptr[j] = ft_substr(str1, i, split_len(str1, c, i));
 		if (!ptr[j])
 		{
 			ft_free(ptr);
