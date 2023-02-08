@@ -1,27 +1,50 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_striteri.c                                      :+:    :+:            */
+/*   ft_utils.c                                         :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: tde-brui <tde-brui@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/10/13 15:32:07 by tde-brui      #+#    #+#                 */
-/*   Updated: 2022/10/21 17:56:18 by tde-brui      ########   odam.nl         */
+/*   Created: 2022/10/28 12:59:03 by tde-brui      #+#    #+#                 */
+/*   Updated: 2023/02/08 17:05:51 by tde-brui      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
-void	ft_striteri(char *s, void (*f)(unsigned int, char*))
+int	printf_putchar(int c)
 {
-	unsigned int	i;
-	unsigned int	j;
+	write(1, &c, 1);
+	return (1);
+}
+
+int	printf_putstr(char *str)
+{
+	int	i;
 
 	i = 0;
-	j = ft_strlen(s);
-	while (s[i])
+	if (!str)
+		return (printf_putstr("(null)"));
+	while (str[i])
 	{
-		f(i, &s[i]);
+		write(1, &str[i], 1);
 		i++;
 	}
+	return (i);
+}
+
+
+int	ft_hexa_len(unsigned int n)
+{
+	int	i;
+
+	i = 0;
+	if (n == 0)
+		return (1);
+	while (n > 0)
+	{
+		n = n / 16;
+		i++;
+	}
+	return (i);
 }

@@ -1,31 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_itoa.c                                          :+:    :+:            */
+/*   ft_unsigned_dec.c                                  :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: tde-brui <tde-brui@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/10/12 18:52:07 by tde-brui      #+#    #+#                 */
-/*   Updated: 2022/10/21 15:17:16 by tde-brui      ########   odam.nl         */
+/*   Created: 2022/10/25 15:42:10 by tde-brui      #+#    #+#                 */
+/*   Updated: 2023/02/08 16:56:57 by tde-brui      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
-static int	ft_len(int n)
+int	ft_uns_len(unsigned int n)
 {
 	int	i;
 
 	i = 0;
 	if (n == 0)
 		return (1);
-	if (n == -2147483648)
-		return (11);
-	if (n < 0)
-	{
-		n = n * -1;
-		i++;
-	}
 	while (n > 0)
 	{
 		n = n / 10;
@@ -34,45 +27,35 @@ static int	ft_len(int n)
 	return (i);
 }
 
-static char	*ft_min_int(char *str)
+char	*ft_utoa(unsigned int n)
 {
-	char	*lol;
-	int		i;
+	char				*ptr;
+	unsigned int		j;
 
-	i = 0;
-	lol = "-2147483648";
-	while (lol[i])
-	{
-		str[i] = lol[i];
-		i++;
-	}
-	return (str);
-}
-
-char	*ft_itoa(int n)
-{
-	char	*ptr;
-	int		j;
-
-	j = ft_len(n);
-	ptr = (char *)malloc(ft_len(n) + 1);
+	j = (unsigned int)ft_uns_len(n);
+	ptr = (char *)malloc(j + 1);
 	if (ptr == 0)
 		return (0);
 	ptr[j] = '\0';
-	if (n < 0)
-	{
-		ptr[0] = '-';
-		n *= -1;
-	}
-	while (n > 9)
+	while (n > 0)
 	{
 		ptr[j - 1] = (n % 10) + 48;
 		j--;
 		n = n / 10;
 	}
-	if (n > -1 && n < 10)
-		ptr[j - 1] = n + 48;
-	if (n == -2147483648)
-		ptr = ft_min_int(ptr);
 	return (ptr);
+}
+
+int	ft_unsigned_dec(unsigned int num)
+{
+	char	*ptr;
+
+	if (num == 0)
+		return (printf_putchar('0'));
+	ptr = ft_utoa(num);
+	if (!ptr)
+		return (0);
+	printf_putstr(ptr);
+	free(ptr);
+	return (ft_uns_len(num));
 }

@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_itoa.c                                          :+:    :+:            */
+/*   ft_get_int.c                                       :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: tde-brui <tde-brui@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/10/12 18:52:07 by tde-brui      #+#    #+#                 */
-/*   Updated: 2022/10/21 15:17:16 by tde-brui      ########   odam.nl         */
+/*   Created: 2022/10/25 14:33:53 by tde-brui      #+#    #+#                 */
+/*   Updated: 2023/02/08 17:19:22 by tde-brui      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
-static int	ft_len(int n)
+static int	printf_len(int n)
 {
 	int	i;
 
@@ -34,7 +34,7 @@ static int	ft_len(int n)
 	return (i);
 }
 
-static char	*ft_min_int(char *str)
+static char	*printf_min_int(char *str)
 {
 	char	*lol;
 	int		i;
@@ -49,13 +49,13 @@ static char	*ft_min_int(char *str)
 	return (str);
 }
 
-char	*ft_itoa(int n)
+char	*printf_itoa(int n)
 {
 	char	*ptr;
 	int		j;
 
-	j = ft_len(n);
-	ptr = (char *)malloc(ft_len(n) + 1);
+	j = printf_len(n);
+	ptr = (char *)malloc(printf_len(n) + 1);
 	if (ptr == 0)
 		return (0);
 	ptr[j] = '\0';
@@ -73,6 +73,16 @@ char	*ft_itoa(int n)
 	if (n > -1 && n < 10)
 		ptr[j - 1] = n + 48;
 	if (n == -2147483648)
-		ptr = ft_min_int(ptr);
+		ptr = printf_min_int(ptr);
 	return (ptr);
+}
+
+int	ft_get_int(int n)
+{
+	char	*ptr;
+
+	ptr = printf_itoa(n);
+	printf_putstr(ptr);
+	free(ptr);
+	return (printf_len(n));
 }

@@ -36,13 +36,7 @@ SOURCE	= \
 	ft_strmapi.c \
 	ft_striteri.c \
 	ft_split.c \
-	ft_utils.c \
-	ft_upper_hexa.c \
-	ft_unsigned_dec.c \
-	ft_put_addr.c \
-	ft_printf.c \
-	ft_lower_hexa.c \
-	ft_get_int.c
+	get_next_line.c \
 
 OBJECT = $(SOURCE:.c=.o)
 
@@ -50,14 +44,18 @@ all: $(NAME)
 
 $(NAME): $(OBJECT)
 	ar -cr $(NAME) $(OBJECT)
+	make -C ft_printf
+	cp ft_printf/libftprintf.a libft.a
 
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
-clean: 
+clean:
+	make clean -C ft_printf
 	rm -f $(OBJECT)
 
 fclean: clean
+	make fclean -C ft_printf
 	rm -f $(NAME)
 
 re: fclean all
