@@ -6,7 +6,7 @@
 /*   By: tde-brui <tde-brui@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/25 15:42:10 by tde-brui      #+#    #+#                 */
-/*   Updated: 2022/10/28 13:47:19 by tde-brui      ########   odam.nl         */
+/*   Updated: 2023/02/21 12:29:24 by tijmendebru   ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,11 +51,11 @@ int	ft_unsigned_dec(unsigned int num)
 	char	*ptr;
 
 	if (num == 0)
-		return (ft_putchar('0'));
+		return (printf_putchar('0'));
 	ptr = ft_utoa(num);
 	if (!ptr)
 		return (0);
-	ft_putstr(ptr);
+	printf_putstr(ptr);
 	free(ptr);
 	return (ft_uns_len(num));
 }

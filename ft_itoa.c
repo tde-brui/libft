@@ -6,33 +6,11 @@
 /*   By: tde-brui <tde-brui@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/12 18:52:07 by tde-brui      #+#    #+#                 */
-/*   Updated: 2022/10/21 15:17:16 by tde-brui      ########   odam.nl         */
+/*   Updated: 2023/02/21 12:38:49 by tijmendebru   ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-static int	ft_len(int n)
-{
-	int	i;
-
-	i = 0;
-	if (n == 0)
-		return (1);
-	if (n == -2147483648)
-		return (11);
-	if (n < 0)
-	{
-		n = n * -1;
-		i++;
-	}
-	while (n > 0)
-	{
-		n = n / 10;
-		i++;
-	}
-	return (i);
-}
 
 static char	*ft_min_int(char *str)
 {

@@ -6,7 +6,7 @@
 /*   By: tde-brui <tde-brui@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/06 11:07:30 by tde-brui      #+#    #+#                 */
-/*   Updated: 2022/10/21 15:14:51 by tde-brui      ########   odam.nl         */
+/*   Updated: 2023/02/21 13:53:45 by tijmendebru   ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,11 @@ int	ft_strncmp(const char *str1, const char *str2, size_t size)
 
 	i = 0;
 	ptr = (unsigned char *)str1;
+	if (!ptr)
+		return (0);
 	ptr1 = (unsigned char *)str2;
+	if (!ptr1)
+		return (0);
 	while (i < size)
 	{
 		if (ptr[i] != ptr1[i] || ptr[i] == '\0' || ptr1[i] == '\0')

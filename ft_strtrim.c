@@ -6,7 +6,7 @@
 /*   By: tde-brui <tde-brui@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/11 16:23:42 by tde-brui      #+#    #+#                 */
-/*   Updated: 2022/10/21 17:55:17 by tde-brui      ########   odam.nl         */
+/*   Updated: 2023/02/21 11:37:49 by tijmendebru   ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,10 +62,8 @@ char	*ft_strtrim(char const *str, char const *set)
 	int		start;
 	int		end;
 	char	*ptr;
-	int		i;
 	int		sum;
 
-	i = 0;
 	start = ft_start(str, set);
 	end = ft_end(str, set);
 	sum = ft_strlen(str) - start - end;

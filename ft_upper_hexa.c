@@ -6,7 +6,7 @@
 /*   By: tde-brui <tde-brui@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/26 14:51:47 by tde-brui      #+#    #+#                 */
-/*   Updated: 2022/10/26 19:15:12 by tde-brui      ########   odam.nl         */
+/*   Updated: 2023/02/21 12:30:19 by tijmendebru   ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,9 +41,9 @@ int	ft_upper_hexa(unsigned int n)
 	char	*ptr;
 
 	if (n == 0)
-		return (ft_putchar('0'));
+		return (printf_putchar('0'));
 	ptr = ft_uphex_todec(n);
-	ft_putstr(ptr);
+	printf_putstr(ptr);
 	free(ptr);
 	return (ft_hexa_len(n));
 }

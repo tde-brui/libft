@@ -6,7 +6,7 @@
 /*   By: tde-brui <tde-brui@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/29 15:17:59 by tde-brui      #+#    #+#                 */
-/*   Updated: 2023/02/08 17:21:49 by tde-brui      ########   odam.nl         */
+/*   Updated: 2023/02/21 11:40:24 by tijmendebru   ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -127,9 +127,7 @@ char	*get_next_line(int fd)
 {
 	static char	*line;
 	char		*ret;
-	int			i;
 
-	i = 0;
 	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (NULL);
 	line = read_file(fd, line);

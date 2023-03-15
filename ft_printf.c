@@ -6,7 +6,7 @@
 /*   By: tde-brui <tde-brui@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/23 14:45:36 by tde-brui      #+#    #+#                 */
-/*   Updated: 2022/10/28 15:31:42 by tde-brui      ########   odam.nl         */
+/*   Updated: 2023/02/21 12:33:31 by tijmendebru   ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,15 +19,15 @@ int	ft_format(va_list list, char format)
 
 	length = 0;
 	if (format == 'c')
-		length += ft_putchar(va_arg(list, int));
+		length += printf_putchar(va_arg(list, int));
 	else if (format == 's')
-		length += ft_putstr(va_arg(list, char *));
+		length += printf_putstr(va_arg(list, char *));
 	else if (format == 'd' || format == 'i')
 		length += ft_get_int(va_arg(list, int));
 	else if (format == 'u')
 		length += ft_unsigned_dec(va_arg(list, unsigned int));
 	else if (format == '%')
-		length += ft_putchar('%');
+		length += printf_putchar('%');
 	else if (format == 'x')
 		length += ft_lower_hexa(va_arg(list, unsigned int));
 	else if (format == 'X')
@@ -58,7 +58,7 @@ int	ft_printf(const char *str, ...)
 			i++;
 		}
 		else
-			length += ft_putchar(str[i]);
+			length += printf_putchar(str[i]);
 		if (str[i] != '\0')
 			i++;
 	}

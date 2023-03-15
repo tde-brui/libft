@@ -6,7 +6,7 @@
 /*   By: tde-brui <tde-brui@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/25 14:33:53 by tde-brui      #+#    #+#                 */
-/*   Updated: 2022/10/28 18:27:42 by tde-brui      ########   odam.nl         */
+/*   Updated: 2023/02/21 12:37:21 by tijmendebru   ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	ft_get_int(int n)
 	char	*ptr;
 
 	ptr = ft_itoa(n);
-	ft_putstr(ptr);
+	printf_putstr(ptr);
 	free(ptr);
 	return (ft_len(n));
 }

@@ -6,7 +6,7 @@
 /*   By: tde-brui <tde-brui@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/25 13:49:40 by tde-brui      #+#    #+#                 */
-/*   Updated: 2022/10/28 13:47:12 by tde-brui      ########   odam.nl         */
+/*   Updated: 2023/02/21 12:36:14 by tijmendebru   ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,12 +60,12 @@ int	ft_put_addr(void *ptr)
 	i = (unsigned long)ptr;
 	p = ft_lowhex_todec(i);
 	length = 0;
-	length += ft_putstr("0x");
+	length += printf_putstr("0x");
 	if (!ptr)
-		length += ft_putchar('0');
+		length += printf_putchar('0');
 	else
 	{
-		ft_putstr(p);
+		printf_putstr(p);
 		length += ft_addr_len(i);
 	}
 	free(p);
