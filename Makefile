@@ -44,7 +44,9 @@ SOURCE	= \
 	ft_printf.c \
 	ft_put_addr.c \
 	ft_lower_hexa.c \
-	ft_get_int.c
+	ft_get_int.c \
+	list_len.c \
+	list_new.c
 
 OBJECT = $(SOURCE:.c=.o)
 

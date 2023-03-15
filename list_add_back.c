@@ -1,49 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_utils.c                                         :+:    :+:            */
+/*   list_add_back.c                                    :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: tde-brui <tde-brui@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/10/28 12:59:03 by tde-brui      #+#    #+#                 */
-/*   Updated: 2023/03/15 15:56:19 by tde-brui      ########   odam.nl         */
+/*   Created: 2023/03/15 15:54:06 by tde-brui      #+#    #+#                 */
+/*   Updated: 2023/03/15 15:54:15 by tde-brui      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
-int	printf_putchar(int c)
+void	list_add_back(t_list **stack_a, int value)
 {
-	write(1, &c, 1);
-	return (1);
-}
+	t_list	*head;
 
-int	printf_putstr(char *str)
-{
-	int	i;
-
-	i = 0;
-	if (!str)
-		return (printf_putstr("(null)"));
-	while (str[i])
+	head = (*stack_a);
+	if ((*stack_a) == NULL)
+		(*stack_a) = list_new(value);
+	else
 	{
-		write(1, &str[i], 1);
-		i++;
+		while (head->next != NULL)
+			head = head->next;
+		head->next = list_new(value);
 	}
-	return (i);
-}
-
-int	ft_hexa_len(unsigned int n)
-{
-	int	i;
-
-	i = 0;
-	if (n == 0)
-		return (1);
-	while (n > 0)
-	{
-		n = n / 16;
-		i++;
-	}
-	return (i);
 }
